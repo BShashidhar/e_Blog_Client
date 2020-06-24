@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee">
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Email" formControlName="email" />
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm.email.errors?.required"
+          >
+            Enter your email.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm.email.errors?.pattern"
+          >
+            Enter valid email.
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="inputName">firstname</label> -->
+          <input class="form-control" type="text" placeholder="Password" formControlName="firstname" />
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm.password.errors?.required"
+          >
+            password is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
